@@ -2,14 +2,17 @@
 
 $background: #434343;
 $panel-body: #7d7d7f;
+$screen-text: #434343;
 
 .safe-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  
-  height: 100vh;
+
+  min-height: 100vh;
+  height: 100%;
+  padding-bottom: 20px;
   background-color: $background;
   .safe-panel {
     max-width: 400px;
@@ -23,6 +26,13 @@ $panel-body: #7d7d7f;
       display: flex;
       justify-content: space-between;
       flex-flow: row wrap-reverse;
+    }
+    .serial-number {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 500;
+      font-size: 15px;
+      float: right;
+      color: $screen-text;
     }
   }
 }
