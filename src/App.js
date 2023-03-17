@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.scss";
 import Button from "./components/Button";
-import { keys } from "./components/data";
+import { keys } from "./data";
 import Screen from "./components/Screen";
 import {
   updateCopyPin,
@@ -35,26 +35,6 @@ const App = () => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenCountDown]);
-
-  useEffect(() => {
-    const interval = setTimeout(() => {
-      if (submitCountDown > 0) {
-        setSubmitCountDown(submitCountDown - 0.1);
-      } else {
-        dispatch(updateEnteredPin(""));
-        if (status !== "Service") {
-          validatePin();
-        } else {
-          requestSerialNumber();
-        }
-      }
-    }, 100);
-
-    return () => {
-      clearTimeout(interval);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [submitCountDown]);
 
   useEffect(() => {
     const interval = setTimeout(() => {
